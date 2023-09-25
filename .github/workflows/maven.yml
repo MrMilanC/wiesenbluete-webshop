@@ -29,7 +29,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - run: mkdir download & cp ./wiesenbluete-webshop/target/*.jar download
+    - run: mkdir download & cp ./target/*.jar download
 
    
     - name: Upload build artifact
