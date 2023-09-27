@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-//@Embeddable
 @Entity
 @Table(name = "product")
 public class Product {
@@ -20,6 +19,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+//    @OneToOne(mappedBy = "item")
+//    CartItem cartItem;
 
 //    @ManyToOne //(cascade = CascadeType.ALL)
 //    //@JoinColumn (name = "category_id", referencedColumnName = "category_id")
