@@ -30,7 +30,7 @@ public class RegisterController {
 
         // checking for username exists in a database
         if(userService.doesUsernameExist(newUserDTO.getUsername())){
-            return new ResponseEntity<>("Username is already exist!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Username already exists!", HttpStatus.BAD_REQUEST);
         }
 
         User user = new User();
