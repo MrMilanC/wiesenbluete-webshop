@@ -1,4 +1,4 @@
-package com.example.wiesenbluetewebshop.service.jwt;
+package com.example.wiesenbluetewebshop.security.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

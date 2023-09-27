@@ -1,4 +1,4 @@
-package com.example.wiesenbluetewebshop.service.jwt;
+package com.example.wiesenbluetewebshop.security.jwt;
 
 import lombok.Getter;
 import lombok.Setter;
