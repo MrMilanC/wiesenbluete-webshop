@@ -20,6 +20,11 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    public Product () {}
+
+    public Product(long l, String s, double v) {
+    }
+
 //    @OneToOne(mappedBy = "item")
 //    CartItem cartItem;
 

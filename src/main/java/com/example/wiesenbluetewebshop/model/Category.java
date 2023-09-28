@@ -20,4 +20,10 @@ public class Category {
     //@JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<Product> productList;
+
+    public void setId(long l) {
+    }
+
+    public void setName(String category) {
+    }
 }

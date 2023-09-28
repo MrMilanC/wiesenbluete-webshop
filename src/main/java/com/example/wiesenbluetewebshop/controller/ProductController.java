@@ -13,26 +13,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-//@CrossOrigin(origins = "*")
-//@CrossOrigin(origins = "http://localhost:63343")
 @CrossOrigin(origins = "http://localhost:63343", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, allowedHeaders = "*")
 public class ProductController {
 
+    private final ProductService productService;
+    private final CategoryService categoryService;
+
     @Autowired
-    private ProductService productService;
-    @Autowired
-    private CategoryService categoryService;
+    public ProductController(ProductService productService, CategoryService categoryService) {
+        this.productService = productService;
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/view")
-    //@PreAuthorize("hasRole('USER')")
     public ResponseEntity<List<Product>> viewAllProduct() throws ProductException {
-        return new ResponseEntity<List<Product>>(productService.viewAllProduct(), HttpStatus.OK);
+        return new ResponseEntity<>(productService.viewAllProduct(), HttpStatus.OK);
     }
 
     @GetMapping("view/category/{categoryId}")
     public ResponseEntity<List<Product>> viewProductByCategoryId(@PathVariable("categoryId") Long categoryId)
             throws ProductException {
         System.out.println("gedruckt");
-        return new ResponseEntity<List<Product>>(categoryService.viewProductByCategory(categoryId), HttpStatus.OK);
+        return new ResponseEntity<>(categoryService.viewProductByCategory(categoryId), HttpStatus.OK);
     }
 }

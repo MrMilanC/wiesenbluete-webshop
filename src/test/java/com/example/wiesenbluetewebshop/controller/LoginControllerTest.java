@@ -50,7 +50,7 @@ class LoginControllerTest {
         Authentication authentication = mock(Authentication.class);
 
         // mock UserPrincipal
-        UserPrincipal userPrincipal = new UserPrincipal(1L, "valid", "valid123", Collections.emptyList());
+        UserPrincipal userPrincipal = new UserPrincipal(1L, "validUser", "valid123", Collections.emptyList());
 
         // Mock the way AuthenticationManager works sp we get an Authentication object
         when(authenticationManager.authenticate(any()))
