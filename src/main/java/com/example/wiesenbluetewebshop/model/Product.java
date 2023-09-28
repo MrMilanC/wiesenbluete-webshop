@@ -25,6 +25,9 @@ public class Product {
     public Product(long l, String s, double v) {
     }
 
+    public void setId(long l) {
+    }
+
 //    @OneToOne(mappedBy = "item")
 //    CartItem cartItem;
 
